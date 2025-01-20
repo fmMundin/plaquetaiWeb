@@ -133,12 +133,14 @@ function animateValue(obj, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-// Carousel functionality
+// Carousel functionality with touch support
 function initCarousel() {
     const carousel = document.querySelector('.carousel-inner');
     const items = document.querySelectorAll('.carousel-item');
     const dots = document.querySelectorAll('.carousel-dot');
     let currentSlide = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     function updateCarousel() {
         carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -158,6 +160,28 @@ function initCarousel() {
             updateCarousel();
         });
     });
+
+    // Add touch support for carousel
+    carousel.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    carousel.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX) {
+            // Swipe left
+            currentSlide = (currentSlide + 1) % items.length;
+        }
+        if (touchEndX > touchStartX) {
+            // Swipe right
+            currentSlide = (currentSlide - 1 + items.length) % items.length;
+        }
+        updateCarousel();
+    }
 }
 
 // FAQ functionality
@@ -179,11 +203,23 @@ function initProgressBar() {
     });
 }
 
-// Floating Action Button
+// Floating Action Button with touch support
 function initFloatingButton() {
     const fab = document.querySelector('.floating-action-button');
+    
+    // Add touch events
+    fab.addEventListener('touchstart', () => {
+        fab.style.transform = 'scale(0.95)';
+    });
+    
+    fab.addEventListener('touchend', () => {
+        fab.style.transform = 'scale(1)';
+        // Add your action here
+        console.log('Chat opened');
+    });
+    
+    // Add click event
     fab.addEventListener('click', () => {
-        // Adicione ação do botão (ex: abrir chat)
         console.log('Chat opened');
     });
 }
