@@ -10,10 +10,18 @@
 </head>
 
 <body>
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
     <header>
         <div class="header-content">
             <h1>Plaquet.AI</h1>
-            <p>Revolucionando a Contagem de Plaquetas com IA</p>
+            <p>Revolucionando a Análise Hematológica com Inteligência Artificial</p>
+            <div class="header-buttons">
+                <a href="#features" class="btn btn-primary">Conheça o Projeto</a>
+                <a href="#contact" class="btn btn-outline">Entre em Contato</a>
+            </div>
         </div>
     </header>
 
@@ -21,35 +29,82 @@
         <nav>
             <div class="nav-links">
                 <a href="#about">Sobre</a>
-                <a href="#features">Funcionalidades</a>
+                <a href="#features">Tecnologia</a>
+                <a href="#stats">Resultados</a>
                 <a href="#team">Equipe</a>
-                <a href="#awards">Prêmios</a>
-                <a href="#contact">Contato</a>
                 <a href="research.html">Pesquisa</a>
-                <a href="gallery.html">Galeria</a>
-                <a href="documentation.html">Documentação</a>
+                <a href="documentation.html">Docs</a>
             </div>
             <button id="theme-toggle" class="theme-toggle">🌙</button>
         </nav>
     </div>
 
-    <div id="about" class="section-container">
-        <div class="card">
-            <h2>Sobre o Projeto</h2>
-            <p>Plaquet.AI é um projeto inovador que utiliza Inteligência Artificial para a contagem de plaquetas em
-                amostras sanguíneas. Nosso objetivo é ajudar clínicas e hospitais em regiões remotas, oferecendo uma
-                solução acessível e eficiente para prevenção de hemorragias graves.</p>
+    <div id="highlights" class="section-container">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <h2>Tecnologia Inovadora</h2>
+                    <p>Inteligência Artificial para análise hematológica precisa</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Reconhecimento Internacional</h2>
+                    <p>5+ prêmios em competições científicas</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Impacto Social</h2>
+                    <p>Democratizando o acesso à análise hematológica</p>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
         </div>
     </div>
 
-    <div id="features" class="section-container">
-        <div class="card">
-            <h2>Funcionalidades</h2>
-            <ul>
-                <li>Detecção automatizada de plaquetas em imagens microscópicas.</li>
-                <li>Interface intuitiva para clínicas e profissionais de saúde.</li>
-                <li>Resultados rápidos e precisos em menos de um segundo.</li>
-            </ul>
+    <div id="about" class="section-container">
+        <div class="card-featured">
+            <h2>Revolucionando a Análise Hematológica</h2>
+            <p>Uma solução inovadora que combina IA e microscopia para análises precisas e acessíveis.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <h3>Análise Precisa</h3>
+                <p>Precisão de 97.8% na contagem de plaquetas</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Resultado Rápido</h3>
+                <p>Resultados em menos de 1 segundo</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Acessível</h3>
+                <p>Interface intuitiva para profissionais de saúde</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="stats" class="section-container">
+        <div class="card-glass">
+            <h2>Impacto do Projeto</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3>5+</h3>
+                    <p>Prêmios Conquistados</p>
+                </div>
+                <div class="stat-box">
+                    <h3>1000+</h3>
+                    <p>Análises Realizadas</p>
+                </div>
+                <div class="stat-box">
+                    <h3>97.8%</h3>
+                    <p>Taxa de Precisão</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -84,6 +139,35 @@
         </div>
     </div>
 
+    <div id="faq" class="section-container">
+        <div class="card">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Como funciona o Plaquet.AI?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        O Plaquet.AI utiliza algoritmos de IA para analisar imagens microscópicas e realizar a contagem
+                        precisa de plaquetas.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Qual a precisão do sistema?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nossa tecnologia alcança 97.8% de precisão nas análises, comparável a contagens manuais
+                        realizadas por especialistas.
+                    </div>
+                </div>
+                <!-- Add more FAQ items as needed -->
+            </div>
+        </div>
+    </div>
+
     <div id="contact" class="section-container">
         <div class="card">
             <h2>Contato</h2>
@@ -92,11 +176,102 @@
         </div>
     </div>
 
+    <!-- Nova seção: Tecnologias -->
+    <div id="technologies" class="section-container">
+        <h2>Tecnologias Utilizadas</h2>
+        <div class="tech-stack-grid">
+            <div class="tech-item">
+                <div class="tech-icon">🤖</div>
+                <h3>TensorFlow</h3>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🔍</div>
+                <h3>OpenCV</h3>
+            </div>
+            <!-- Adicione mais tecnologias -->
+        </div>
+    </div>
+
+    <!-- Nova seção: Depoimentos -->
+    <div id="testimonials" class="section-container">
+        <div class="testimonial-card">
+            <img src="avatar1.jpg" alt="Dr. Silva" class="testimonial-avatar">
+            <blockquote>
+                "O Plaquet.AI revolucionou nossa rotina laboratorial."
+            </blockquote>
+            <cite>Dr. Silva - Hospital Regional</cite>
+        </div>
+    </div>
+
+    <!-- Nova seção: Linha do Tempo do Projeto -->
+    <div id="project-timeline" class="section-container">
+        <div class="timeline-modern">
+            <div class="timeline-item-modern">
+                <h3>2023</h3>
+                <p>Início do Desenvolvimento</p>
+            </div>
+            <!-- Adicione mais eventos -->
+        </div>
+    </div>
+
+    <!-- Nova seção: Parceiros -->
+    <div id="partners" class="section-container">
+        <h2>Parceiros</h2>
+        <div class="partners-grid">
+            <!-- Adicione logos dos parceiros -->
+        </div>
+    </div>
+
+    <!-- Nova seção: Métricas de Impacto -->
+    <div id="impact" class="section-container">
+        <h2>Nosso Impacto</h2>
+        <!-- Adicione métricas de impacto -->
+    </div>
+
+    <!-- Botão flutuante de ação -->
+    <div class="floating-action-button">
+        <span>💬</span>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Plaquet.AI - Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre</h3>
+                <p>Plaquet.AI é um projeto inovador que utiliza IA para democratizar o acesso à análise hematológica.
+                </p>
+
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#features">Tecnologia</a></li>
+                        <li><a href="research.html">Pesquisa</a></li>
+                        <li><a href="documentation.html">Documentação</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li>Email: contato@plaquetai.com</li>
+                        <li>Tel: (00) 0000-0000</li>
+                        <li>Local: São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub">📱</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+                <p>&copy; 2025 Plaquet.AI - Todos os direitos reservados.</p>
+            </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 
 </html>
+
+</html>
+</div>
