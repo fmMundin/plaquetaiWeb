@@ -2,9 +2,11 @@
   --primary-color: #6a1b9a;
   --secondary-color: #9c27b0;
   --accent-color: #e1bee7;
-  --text-color: #333333;
-  --bg-color: #f5f0f7;
-  --card-bg: #ffffff;
+  --text-color: #2c3e50;
+  --bg-color: #ffffff;
+  --card-bg: #f8f9fa;
+  --card-text: #333333;
+  --nav-text: #ffffff;
   --gradient: linear-gradient(135deg, #6a1b9a, #9c27b0);
   --card-shadow: 0 8px 16px rgba(106, 27, 154, 0.1);
   --text-light: #ffffff;
@@ -16,20 +18,34 @@
 [data-theme="dark"] {
   --primary-color: #9c27b0;
   --secondary-color: #6a1b9a;
-  --text-color: #ffffff;
+  --text-color: #f1f1f1;
   --bg-color: #1a1a1a;
   --card-bg: #2d2d2d;
+  --card-text: #ffffff;
   --accent-color: #ce93d8;
 }
 
+/* Configuração de fontes */
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
   transition: var(--transition);
   min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inter', 'Roboto', sans-serif;
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
 /* Header modernizado */
@@ -54,11 +70,12 @@ header::before {
   z-index: 1;
 }
 
+/* Corrigir visibilidade do header */
 .header-content {
-  color: var(--text-light);
-  text-align: center;
-  position: relative;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   z-index: 2;
+  position: relative;
   max-width: 800px;
   padding: 2rem;
 }
@@ -115,11 +132,13 @@ nav {
   gap: 2rem;
 }
 
+/* Corrigir visibilidade da navegação */
 .nav-links a {
-  color: var(--text-light);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -171,22 +190,37 @@ nav {
   transform: translateY(0);
 }
 
+/* Corrigir visibilidade dos cards */
 .card {
   background: var(--card-bg);
-  color: var(--text-color);
+  color: var(--card-text);
   border-radius: 10px;
   padding: 2rem;
   margin: 1rem 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: var(--transition);
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
 }
 
 .card-featured {
   background: var(--gradient);
-  color: var(--text-light);
+  color: #ffffff;
   border-radius: 20px;
   padding: 2rem;
   margin: 2rem 0;
+}
+
+.card-featured h2,
+.card-featured p,
+.carousel-item h2,
+.carousel-item p,
+.stat-card h3,
+.stat-card p {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .card-glass {
@@ -261,6 +295,8 @@ nav {
   position: relative;
   margin-left: 2rem;
   border-left: 2px solid var(--primary-color);
+  background: var(--card-bg);
+  margin-bottom: 1.5rem;
 }
 
 .progress-bar {
@@ -293,16 +329,23 @@ nav {
 
 .stat-box {
   background: var(--card-bg);
-  color: var(--text-color);
+  color: var(--card-text);
   padding: 1.5rem;
   border-radius: 15px;
   text-align: center;
   box-shadow: var(--card-shadow);
   transition: transform 0.3s;
+  border: 2px solid var(--accent-color);
 }
 
 .stat-box:hover {
   transform: translateY(-5px);
+}
+
+.stats-container .stat-box h3 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
 }
 
 .feature-grid {
@@ -313,8 +356,9 @@ nav {
 }
 
 .feature-card {
+  border: 1px solid rgba(106, 27, 154, 0.1);
   background: var(--card-bg);
-  color: var(--text-color);
+  color: var(--card-text);
   padding: 2rem;
   border-radius: 15px;
   box-shadow: var(--card-shadow);
@@ -346,11 +390,15 @@ nav {
   overflow: hidden;
   border-radius: 15px;
   margin: 2rem 0;
+  width: 100%;
 }
 
 .carousel-inner {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  position: relative;
+  width: 100%;
+  height: 300px;
 }
 
 .carousel-item {
@@ -406,7 +454,9 @@ nav {
   padding: 0 1.5rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: var(--card-bg);
+  color: var(--text-color);
 }
 
 .faq-item.active .faq-answer {
@@ -506,10 +556,17 @@ nav {
 
 .testimonial-card {
   background: var(--card-bg);
-  padding: 2rem;
+  padding: 3rem 2rem 2rem;
   border-radius: 15px;
   position: relative;
   margin-top: 3rem;
+  text-align: center;
+}
+
+.testimonial-card blockquote {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 1rem 0;
 }
 
 .testimonial-avatar {
@@ -722,6 +779,7 @@ footer {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 /* Elementos animados */
@@ -798,7 +856,6 @@ footer {
     gap: 1rem;
   }
 
-
   .timeline-container::before {
     left: 0;
   }
@@ -833,6 +890,28 @@ footer {
     width: 50px;
     height: 50px;
   }
+
+  .header-content {
+    padding: 1rem;
+  }
+
+  .btn {
+    display: block;
+    margin: 1rem auto;
+    width: fit-content;
+  }
+
+  .team {
+    padding: 1rem;
+  }
+
+  .carousel-inner {
+    height: 400px;
+  }
+
+  .stat-box h3 {
+    font-size: 2rem;
+  }
 }
 
 /* Tablet responsive styles */
@@ -866,7 +945,179 @@ footer {
   }
 }
 
+/* Novo elemento: Banner flutuante de novidades */
+.news-banner {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: var(--gradient);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(106, 27, 154, 0.3);
+  z-index: 99;
+  animation: bounce 2 seconds infinite;
+  cursor: pointer;
+}
 
-.stats-container {
-  grid-template-columns: 1fr;
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Ajustar contraste para textos sobre fundos escuros */
+.card-featured h2,
+.card-featured p,
+.carousel-item h2,
+.carousel-item p,
+.stat-card h3,
+.stat-card p {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Corrigir layout cards */
+.card {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+}
+
+/* Corrigir FAQ section */
+.faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* Ajustar team section */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Corrigir testimonials layout */
+.testimonial-card {
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.testimonial-card blockquote {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 1rem 0;
+}
+
+/* Ajustar carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+/* Ajustar stats layout */
+.stats-container .stat-box h3 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Melhorar botões */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #ffffff;
+  color: var(--primary-color);
+}
+
+.btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  margin-left: 1rem;
+}
+
+/* Corrigir seção de impacto */
+#impact .card {
+  background: var(--gradient);
+  color: #ffffff;
+}
+
+#impact h2,
+#impact p {
+  color: #ffffff;
+}
+
+/* Ajustar timeline */
+.timeline-item {
+  background: var(--card-bg);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+/* Corrigir layout mobile */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 1rem;
+  }
+
+  .btn {
+    display: block;
+    margin: 1rem auto;
+    width: fit-content;
+  }
+
+  .team {
+    padding: 1rem;
+  }
+
+  .carousel-inner {
+    height: 400px;
+  }
+
+  .stat-box h3 {
+    font-size: 2rem;
+  }
+}
+
+/* Ajustar espaçamentos */
+.section-container>*+* {
+  margin-top: 2rem;
+}
+
+/* Melhorar legibilidade de links */
+.nav-links a,
+.footer-links a {
+  opacity: 0.9;
+  font-weight: 500;
 }

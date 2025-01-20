@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTimelineAnimation();
     initFadeAnimations();
     initParallaxShapes();
+    initNewsBanner();
 });
 
 // Fix observer initialization
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTimelineAnimation();
     initFadeAnimations();
     initParallaxShapes();
+    initNewsBanner();
 });
 
 // Add smooth reveal animations for stats
@@ -279,4 +281,21 @@ function initParallaxShapes() {
             shape.style.transform = `translate(${x}px, ${y}px) rotate(${x * 2}deg)`;
         });
     });
+}
+
+// Adicionar funcionalidade para o banner de novidades
+function initNewsBanner() {
+    const banner = document.querySelector('.news-banner');
+    if (banner) {
+        banner.addEventListener('click', () => {
+            window.location.href = '#features';
+            banner.style.display = 'none';
+        });
+
+        // Fechar banner após 10 segundos
+        setTimeout(() => {
+            banner.style.opacity = '0';
+            setTimeout(() => banner.style.display = 'none', 500);
+        }, 10000);
+    }
 }

@@ -3,16 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plaquet.AI - Projeto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Fix path for GitHub Pages -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Add base URL for GitHub Pages -->
-    <base href="/plaquetaiWeb/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Corrigir link do CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
+    <!-- Add news banner -->
+    <div class="news-banner">
+        🎉 Novo: Versão 2.0 chegando em breve! Clique para saber mais
+    </div>
+
     <div class="progress-container">
         <div class="progress-bar"></div>
     </div>
@@ -20,7 +27,7 @@
     <header>
         <div class="header-content">
             <h1>Plaquet.AI</h1>
-            <p>Revolucionando a Análise Hematológica com Inteligência Artificial</p>
+            <p class="header-subtitle">Revolucionando a Análise Hematológica</p>
             <div class="header-buttons">
                 <a href="#features" class="btn btn-primary">Conheça o Projeto</a>
                 <a href="#contact" class="btn btn-outline">Entre em Contato</a>
@@ -156,29 +163,29 @@
     <div id="faq" class="section-container">
         <div class="card">
             <h2>Perguntas Frequentes</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Como funciona o Plaquet.AI?
-                        <span class="icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        O Plaquet.AI utiliza algoritmos de IA para analisar imagens microscópicas e realizar a contagem
-                        precisa de plaquetas.
-                    </div>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    Como funciona o Plaquet.AI?
+                    <span class="icon">+</span>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Qual a precisão do sistema?
-                        <span class="icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Nossa tecnologia alcança 97.8% de precisão nas análises, comparável a contagens manuais
-                        realizadas por especialistas.
-                    </div>
+                <div class="faq-answer">
+                    O Plaquet.AI utiliza algoritmos de IA para analisar imagens microscópicas e realizar a contagem
+                    precisa de plaquetas.
                 </div>
-                <!-- Add more FAQ items as needed -->
             </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Qual a precisão do sistema?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Nossa tecnologia alcança 97.8% de precisão nas análises, comparável a contagens manuais
+                    realizadas por especialistas.
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
         </div>
     </div>
 
@@ -282,7 +289,8 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Sobre</h3>
-                <p>Plaquet.AI é um projeto inovador que utiliza IA para democratizar o acesso à análise hematológica.
+                <p>Plaquet.AI é um projeto inovador que utiliza IA para democratizar o acesso à análise
+                    hematológica.
                 </p>
             </div>
             <div class="footer-section">
@@ -313,7 +321,7 @@
         </div>
     </footer>
 
-    <!-- Fix script path -->
+    <!-- Remover script duplicado e corrigir caminho -->
     <script src="script.js"></script>
 </body>
 
