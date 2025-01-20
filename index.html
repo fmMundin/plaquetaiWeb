@@ -1,124 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plaquet.AI - Projeto</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #34495e;
-            padding: 0.5rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 2rem;
-        }
-
-        .about {
-            background-color: white;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .about h2 {
-            margin-top: 0;
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        .team {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .team-member {
-            background-color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 200px;
-        }
-
-        .team-member img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Plaquet.AI</h1>
-        <p>Inteligência Artificial para Contagem de Plaquetas</p>
+        <div class="header-content">
+            <h1>Plaquet.AI</h1>
+            <p>Revolucionando a Contagem de Plaquetas com IA</p>
+        </div>
     </header>
-    <nav>
-        <a href="#about">Sobre</a>
-        <a href="#features">Funcionalidades</a>
-        <a href="#team">Equipe</a>
-        <a href="#awards">Prêmios</a>
-        <a href="#contact">Contato</a>
-    </nav>
 
-    <section id="about">
-        <div class="about">
+    <div class="nav-container">
+        <nav>
+            <div class="nav-links">
+                <a href="#about">Sobre</a>
+                <a href="#features">Funcionalidades</a>
+                <a href="#team">Equipe</a>
+                <a href="#awards">Prêmios</a>
+                <a href="#contact">Contato</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </nav>
+    </div>
+
+    <div id="about" class="section-container">
+        <div class="card">
             <h2>Sobre o Projeto</h2>
             <p>Plaquet.AI é um projeto inovador que utiliza Inteligência Artificial para a contagem de plaquetas em
                 amostras sanguíneas. Nosso objetivo é ajudar clínicas e hospitais em regiões remotas, oferecendo uma
                 solução acessível e eficiente para prevenção de hemorragias graves.</p>
         </div>
-    </section>
+    </div>
 
-    <section id="features">
-        <div class="about">
+    <div id="features" class="section-container">
+        <div class="card">
             <h2>Funcionalidades</h2>
             <ul>
                 <li>Detecção automatizada de plaquetas em imagens microscópicas.</li>
@@ -126,10 +48,10 @@
                 <li>Resultados rápidos e precisos em menos de um segundo.</li>
             </ul>
         </div>
-    </section>
+    </div>
 
-    <section id="team">
-        <div class="about">
+    <div id="team" class="section-container">
+        <div class="card">
             <h2>Equipe</h2>
             <div class="team">
                 <div class="team-member">
@@ -144,10 +66,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="awards">
-        <div class="about">
+    <div id="awards" class="section-container">
+        <div class="card">
             <h2>Prêmios</h2>
             <ul>
                 <li>1º Lugar - Bragantec (Informática).</li>
@@ -157,19 +79,21 @@
                 <li>1º Lugar - Mostra de Ciências e Tecnologia do Instituto 3M.</li>
             </ul>
         </div>
-    </section>
+    </div>
 
-    <section id="contact">
-        <div class="about">
+    <div id="contact" class="section-container">
+        <div class="card">
             <h2>Contato</h2>
             <p>Email: contato@plaquetai.com</p>
             <p>Telefone: (00) 0000-0000</p>
         </div>
-    </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 Plaquet.AI - Todos os direitos reservados.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
