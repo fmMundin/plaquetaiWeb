@@ -1,3 +1,52 @@
+// Ensure all functions are defined before use
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize all components
+    initObserver();
+    initThemeToggle();
+    initSmoothScroll();
+    initHeaderAnimation();
+    initCarousel();
+    initFAQ();
+    initProgressBar();
+    initFloatingButton();
+    initTimelineAnimation();
+    initFadeAnimations();
+    initParallaxShapes();
+});
+
+// Fix observer initialization
+function initObserver() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-container, .timeline-item-modern, .fade-in')
+        .forEach(element => observer.observe(element));
+}
+
+// Add error handling for animations
+function initParallaxShapes() {
+    const shapes = document.querySelectorAll('.animated-shape');
+    if (shapes.length === 0) return;
+
+    document.addEventListener('mousemove', (e) => {
+        shapes.forEach(shape => {
+            try {
+                const speed = shape.classList.contains('shape-1') ? 30 : 20;
+                const x = (e.clientX / window.innerWidth * speed);
+                const y = (e.clientY / window.innerHeight * speed);
+                shape.style.transform = `translate(${x}px, ${y}px) rotate(${x * 2}deg)`;
+            } catch (error) {
+                console.error('Error animating shape:', error);
+            }
+        });
+    });
+}
+
 // Animação de elementos ao scroll
 const observerOptions = {
     threshold: 0.1
@@ -66,6 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initProgressBar();
     initFloatingButton();
     initTimelineAnimation();
+    initFadeAnimations();
+    initParallaxShapes();
 });
 
 // Add smooth reveal animations for stats
@@ -157,5 +208,39 @@ function initTimelineAnimation() {
     timelineItems.forEach(item => {
         item.style.opacity = 0;
         timelineObserver.observe(item);
+    });
+}
+
+// Inicializar animações de fade
+function initFadeAnimations() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
+}
+
+// Parallax para formas animadas
+function initParallaxShapes() {
+    document.addEventListener('mousemove', (e) => {
+        const shapes = document.querySelectorAll('.animated-shape');
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        shapes.forEach(shape => {
+            const speed = shape.classList.contains('shape-1') ? 30 : 20;
+            const x = (mouseX * speed);
+            const y = (mouseY * speed);
+            shape.style.transform = `translate(${x}px, ${y}px) rotate(${x * 2}deg)`;
+        });
     });
 }

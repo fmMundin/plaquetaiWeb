@@ -10,6 +10,7 @@
   --text-light: #ffffff;
   --text-dark: #333333;
   --footer-bg: #4a148c;
+  --transition: all 0.3s ease;
 }
 
 [data-theme="dark"] {
@@ -28,6 +29,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: var(--transition);
+  min-height: 100vh;
 }
 
 /* Header modernizado */
@@ -117,7 +119,8 @@ nav {
   background: rgba(255, 255, 255, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 [data-theme="dark"] .nav-links a {
@@ -539,11 +542,18 @@ nav {
   margin: 2rem 0;
   position: relative;
   transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.6s ease;
 }
 
 .timeline-item-modern:nth-child(even) {
   transform: translateX(100%);
   margin-left: auto;
+}
+
+.timeline-item-modern.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Footer modernizado */
@@ -618,4 +628,135 @@ footer {
 .social-links a:hover {
   opacity: 1;
   transform: translateY(-2px);
+}
+
+/* Elementos flutuantes */
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Timeline moderna atualizada */
+.timeline-section {
+  padding: 4rem 0;
+  background: var(--bg-color);
+}
+
+.timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  width: calc(50% - 2rem);
+  margin: 2rem 0;
+  position: relative;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s;
+}
+
+.timeline-item:hover {
+  transform: scale(1.03);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) {
+  margin-right: calc(50% + 2rem);
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: calc(50% + 2rem);
+}
+
+.timeline-item:nth-child(odd)::before {
+  right: -3rem;
+}
+
+.timeline-item:nth-child(even)::before {
+  left: -3rem;
+}
+
+.timeline-date {
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Elementos animados */
+.animated-shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.shape-1 {
+  top: 20%;
+  left: 10%;
+  animation: rotate 20s linear infinite;
+}
+
+.shape-2 {
+  top: 60%;
+  right: 10%;
+  animation: rotate 15s linear infinite reverse;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animações de scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plaquet.AI - Projeto</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Fix path for GitHub Pages -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Add base URL for GitHub Pages -->
+    <base href="/plaquetaiWeb/">
 </head>
 
 <body>
-    <div class="progress-container">
-        <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
     </div>
 
     <header>
@@ -22,6 +24,17 @@
                 <a href="#features" class="btn btn-primary">Conheça o Projeto</a>
                 <a href="#contact" class="btn btn-outline">Entre em Contato</a>
             </div>
+        </div>
+        <!-- Adicionar formas animadas ao header -->
+        <div class="animated-shape shape-1">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" stroke="currentColor" fill="none" stroke-width="2" />
+            </svg>
+        </div>
+        <div class="animated-shape shape-2">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+                <rect width="80" height="80" x="10" y="10" stroke="currentColor" fill="none" stroke-width="2" />
+            </svg>
         </div>
     </header>
 
@@ -180,15 +193,18 @@
     <div id="technologies" class="section-container">
         <h2>Tecnologias Utilizadas</h2>
         <div class="tech-stack-grid">
-            <div class="tech-item">
+            <div class="tech-item floating-element">
                 <div class="tech-icon">🤖</div>
                 <h3>TensorFlow</h3>
             </div>
-            <div class="tech-item">
+            <div class="tech-item floating-element" style="animation-delay: 1s;">
                 <div class="tech-icon">🔍</div>
                 <h3>OpenCV</h3>
             </div>
-            <!-- Adicione mais tecnologias -->
+            <div class="tech-item floating-element" style="animation-delay: 2s;">
+                <div class="tech-icon">🧬</div>
+                <h3>scikit-learn</h3>
+            </div>
         </div>
     </div>
 
@@ -228,50 +244,76 @@
         <!-- Adicione métricas de impacto -->
     </div>
 
+    <!-- Nova seção de timeline -->
+    <div id="journey" class="section-container">
+        <h2 class="fade-in">Nossa Jornada</h2>
+        <div class="timeline-container">
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2023</div>
+                <h3>Início do Projeto</h3>
+                <p>Desenvolvimento do primeiro protótipo do Plaquet.AI</p>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2023</div>
+                <h3>Primeiro Prêmio</h3>
+                <p>1º Lugar na Bragantec</p>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2024</div>
+                <h3>Expansão</h3>
+                <p>Implementação em laboratórios parceiros</p>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2025</div>
+                <h3>Reconhecimento Internacional</h3>
+                <p>Apresentação em conferências internacionais</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Botão flutuante de ação -->
     <div class="floating-action-button">
         <span>💬</span>
     </div>
 
+    <!-- Fix footer structure -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Sobre</h3>
-                <p>Plaquet.AI é um projeto inovador que utiliza IA para democratizar o acesso à análise hematológica.
-                </p>
-
-                <div class="footer-section">
-                    <h3>Links Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="#about">Sobre</a></li>
-                        <li><a href="#features">Tecnologia</a></li>
-                        <li><a href="research.html">Pesquisa</a></li>
-                        <li><a href="documentation.html">Documentação</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contato</h3>
-                    <ul class="footer-links">
-                        <li>Email: contato@plaquetai.com</li>
-                        <li>Tel: (00) 0000-0000</li>
-                        <li>Local: São Paulo, SP</li>
-                    </ul>
-                </div>
+                <p>Plaquet.AI é um projeto inovador que utiliza IA para democratizar o acesso à análise hematológica.</p>
             </div>
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <a href="#" aria-label="GitHub">📱</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                </div>
-                <p>&copy; 2025 Plaquet.AI - Todos os direitos reservados.</p>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#features">Tecnologia</a></li>
+                    <li><a href="./research.html">Pesquisa</a></li>
+                    <li><a href="./documentation.html">Documentação</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul class="footer-links">
+                    <li>Email: contato@plaquetai.com</li>
+                    <li>Tel: (00) 0000-0000</li>
+                    <li>Local: São Paulo, SP</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" aria-label="GitHub">📱</a>
+                <a href="#" aria-label="LinkedIn">💼</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+            </div>
+            <p>&copy; 2025 Plaquet.AI - Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Fix script path -->
+    <script src="./script.js"></script>
 </body>
-
 </html>
-
 </html>
 </div>
