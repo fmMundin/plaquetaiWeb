@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initFadeAnimations();
     initParallaxShapes();
     initNewsBanner();
+    initMobileMenu();
+    initNavigation();
 });
 
 // Fix observer initialization
@@ -119,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initFadeAnimations();
     initParallaxShapes();
     initNewsBanner();
+    initMobileMenu();
+    initNavigation();
 });
 
 // Add smooth reveal animations for stats
@@ -298,4 +302,33 @@ function initNewsBanner() {
             setTimeout(() => banner.style.display = 'none', 500);
         }, 10000);
     }
+}
+
+// Mobile menu toggle
+function initMobileMenu() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+}
+
+// Update navigation links
+function initNavigation() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                document.querySelector('.nav-links')?.classList.remove('active');
+            }
+        });
+    });
 }
