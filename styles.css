@@ -1,33 +1,33 @@
 :root {
-    /* Nova paleta de cores */
-    --primary-color: #ff6f61;
-    --secondary-color: #ffb74d;
-    --accent-color: #4db6ac;
-    --background-color: #f5f5f5;
+    /* Nova paleta de cores em tons roxos */
+    --primary-color: #6a0dad;
+    --secondary-color: #8a2be2;
+    --accent-color: #9370db;
+    --background-color: #f3e5f5;
     --card-bg: #ffffff;
-    --text-color: #333333;
+    --text-color: #4a148c;
     --text-light: #ffffff;
     --text-dark: #212121;
-    --gradient-primary: linear-gradient(135deg, #ff6f61, #ffb74d);
-    --gradient-accent: linear-gradient(135deg, #4db6ac, #ffb74d);
+    --gradient-primary: linear-gradient(135deg, #6a0dad, #8a2be2);
+    --gradient-accent: linear-gradient(135deg, #9370db, #8a2be2);
     --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.1);
-    --footer-bg: #333333;
+    --footer-bg: #4a148c;
     --transition: all 0.3s ease;
 }
 
 [data-theme="dark"] {
-    --primary-color: #ffb74d;
-    --secondary-color: #ff6f61;
-    --accent-color: #4db6ac;
+    --primary-color: #8a2be2;
+    --secondary-color: #6a0dad;
+    --accent-color: #9370db;
     --background-color: #212121;
     --card-bg: #333333;
     --text-color: #e0e0e0;
     --text-dark: #ffffff;
     --text-light: #ffffff;
     --footer-bg: #000000;
-    --gradient-primary: linear-gradient(135deg, #ffb74d, #ff6f61);
-    --gradient-accent: linear-gradient(135deg, #4db6ac, #ffb74d);
+    --gradient-primary: linear-gradient(135deg, #8a2be2, #6a0dad);
+    --gradient-accent: linear-gradient(135deg, #9370db, #8a2be2);
     --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.3);
     --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
@@ -689,7 +689,7 @@ footer {
 }
 
 .social-links a {
-    color: var(--text-light);
+    color: var (--text-light);
     font-size: 1.5rem;
     opacity: 0.8;
     transition: opacity 0.3s, transform 0.3s;

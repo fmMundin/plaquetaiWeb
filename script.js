@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth scroll para links de navegação
     document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
@@ -178,12 +178,12 @@ function initCarousel() {
     carousel.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
     }, false);
-    
+
     carousel.addEventListener('touchend', e => {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
     }, false);
-    
+
     function handleSwipe() {
         if (touchEndX < touchStartX) {
             // Swipe left
@@ -266,18 +266,18 @@ function initProgressBar() {
 // Floating Action Button with touch support
 function initFloatingButton() {
     const fab = document.querySelector('.floating-action-button');
-    
+
     // Add touch events
     fab.addEventListener('touchstart', () => {
         fab.style.transform = 'scale(0.95)';
     });
-    
+
     fab.addEventListener('touchend', () => {
         fab.style.transform = 'scale(1)';
         // Add your action here
         console.log('Chat opened');
     });
-    
+
     // Add click event
     fab.addEventListener('click', () => {
         console.log('Chat opened');
@@ -362,7 +362,7 @@ function initNewsBanner() {
 function initMobileMenu() {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
+
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -434,9 +434,9 @@ function animateCounter(element) {
     const target = parseInt(element.getAttribute('data-target'));
     let count = 0;
     const speed = target / 100;
-    
+
     const updateCount = () => {
-        if(count < target) {
+        if (count < target) {
             count += speed;
             element.innerText = Math.ceil(count);
             requestAnimationFrame(updateCount);
@@ -444,7 +444,7 @@ function animateCounter(element) {
             element.innerText = target;
         }
     };
-    
+
     updateCount();
 }
 
@@ -454,23 +454,23 @@ function initThemeToggle() {
 
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     const currentTheme = document.documentElement.getAttribute('data-theme');
-    
+
     // Set initial icon
     themeToggle.innerHTML = currentTheme === 'dark' ? '🌞' : '🌜';
-    
+
     themeToggle.addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         const newTheme = isDark ? 'light' : 'dark';
-        
+
         // Update theme
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         themeToggle.innerHTML = newTheme === 'dark' ? '🌞' : '🌜';
-        
+
         // Update meta theme color
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
         if (metaThemeColor) {
-            metaThemeColor.content = newTheme === 'dark' ? '#212121' : '#ff6f61';
+            metaThemeColor.content = newTheme === 'dark' ? '#212121' : '#6a0dad';
         }
     });
 }
