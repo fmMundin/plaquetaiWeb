@@ -26,3 +26,5 @@ plaquetaiWeb/
 - HTML5
 - CSS3
 - JavaScript (Vanilla)
+
+### 5. Atualizar README

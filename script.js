@@ -456,7 +456,7 @@ function initThemeToggle() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     
     // Set initial icon
-    themeToggle.textContent = currentTheme === 'dark' ? '🌞' : '🌙';
+    themeToggle.innerHTML = currentTheme === 'dark' ? '🌞' : '🌜';
     
     themeToggle.addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -465,12 +465,12 @@ function initThemeToggle() {
         // Update theme
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        themeToggle.textContent = newTheme === 'dark' ? '🌞' : '🌙';
+        themeToggle.innerHTML = newTheme === 'dark' ? '🌞' : '🌜';
         
         // Update meta theme color
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
         if (metaThemeColor) {
-            metaThemeColor.content = newTheme === 'dark' ? '#121212' : '#6200ea';
+            metaThemeColor.content = newTheme === 'dark' ? '#212121' : '#ff6f61';
         }
     });
 }
