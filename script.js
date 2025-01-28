@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initNewsBanner();
     initMobileMenu();
     initNavigation();
+    initGSAPAnimations();
+    initParticles();
 });
 
 // Fix observer initialization
@@ -123,6 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initNewsBanner();
     initMobileMenu();
     initNavigation();
+    initGSAPAnimations();
+    initParticles();
 });
 
 // Add smooth reveal animations for stats
@@ -331,4 +335,65 @@ function initNavigation() {
             }
         });
     });
+}
+
+// Add GSAP animations
+function initGSAPAnimations() {
+    gsap.fromTo(".stat-card-modern", {
+        opacity: 0,
+        y: 50
+    }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: ".stat-card-modern",
+            start: "top center+=100",
+            toggleActions: "play none none reverse"
+        }
+    });
+}
+
+// Add particle background
+function initParticles() {
+    particlesJS("particles-js", {
+        // Particle.js configuration
+        particles: {
+            number: { value: 80 },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: {
+                value: 0.5,
+                random: true
+            },
+            size: {
+                value: 3,
+                random: true
+            },
+            move: {
+                enable: true,
+                speed: 2
+            }
+        }
+    });
+}
+
+// Add smooth counter animation
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    let count = 0;
+    const speed = target / 100;
+    
+    const updateCount = () => {
+        if(count < target) {
+            count += speed;
+            element.innerText = Math.ceil(count);
+            requestAnimationFrame(updateCount);
+        } else {
+            element.innerText = target;
+        }
+    };
+    
+    updateCount();
 }
