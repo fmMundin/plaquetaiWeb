@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initGSAPAnimations();
     initParticles();
+    initImageCarousel();
+    loadDynamicContent();
 });
 
 // Fix observer initialization
@@ -127,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initGSAPAnimations();
     initParticles();
+    initImageCarousel();
 });
 
 // Add smooth reveal animations for stats
@@ -192,6 +195,53 @@ function initCarousel() {
         }
         updateCarousel();
     }
+}
+
+// Enhanced carousel functionality
+function initImageCarousel() {
+    const carousel = document.querySelector('.showcase-carousel .carousel-inner');
+    if (!carousel) return;
+
+    const items = carousel.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const offset = index * -100;
+        carousel.style.transform = `translateX(${offset}%)`;
+        updateDots(index);
+    }
+
+    function updateDots(index) {
+        document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    // Auto advance slides
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        showSlide(currentIndex);
+    }, 5000);
+
+    // Touch support for carousel
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX) {
+            // Swipe left
+            currentIndex = (currentIndex + 1) % items.length;
+        } else if (touchEndX > touchStartX) {
+            // Swipe right
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+        }
+        showSlide(currentIndex);
+    });
 }
 
 // FAQ functionality
@@ -397,3 +447,58 @@ function animateCounter(element) {
     
     updateCount();
 }
+
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    // Set initial icon
+    themeToggle.textContent = currentTheme === 'dark' ? '🌞' : '🌙';
+    
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        
+        // Update theme
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? '🌞' : '🌙';
+        
+        // Update meta theme color
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+            metaThemeColor.content = newTheme === 'dark' ? '#121212' : '#6200ea';
+        }
+    });
+}
+
+// Add this to your existing script.js
+function loadDynamicContent() {
+    const contentSections = document.querySelectorAll('[data-dynamic-content]');
+    
+    contentSections.forEach(section => {
+        const contentType = section.dataset.dynamicContent;
+        const content = siteContent[contentType];
+        
+        if (content) {
+            // Generate HTML based on content type
+            let html = '';
+            switch(contentType) {
+                case 'features':
+                    html = generateFeatureCards(content);
+                    break;
+                case 'stats':
+                    html = generateStatCards(content);
+                    break;
+                // Add more content types
+            }
+            section.innerHTML = html;
+        }
+    });
+}
+
+// Initialize dynamic content
+document.addEventListener('DOMContentLoaded', loadDynamicContent);

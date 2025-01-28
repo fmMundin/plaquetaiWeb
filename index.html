@@ -16,6 +16,14 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- Add new CSS for image gallery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <!-- Add theme color meta tag -->
+    <meta name="theme-color" content="#6200ea">
+    <script>
+        // Verificar e aplicar tema antes de carregar CSS
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </head>
 
 <body>
@@ -33,8 +41,8 @@
             <h1>Plaquet.AI</h1>
             <p class="header-subtitle">Revolucionando a Análise Hematológica</p>
             <div class="header-buttons">
-                <a href="#features" class="btn btn-primary">Conheça o Projeto</a>
-                <a href="#contact" class="btn btn-outline">Entre em Contato</a>
+                <a href="#about" class="btn btn-primary btn-lg">Conheça Nossa Solução</a>
+                <a href="#demo" class="btn btn-outline-light btn-lg">Ver Demonstração</a>
             </div>
         </div>
         <!-- Adicionar formas animadas ao header -->
@@ -48,22 +56,8 @@
                 <rect width="80" height="80" x="10" y="10" stroke="currentColor" fill="none" stroke-width="2" />
             </svg>
         </div>
+        <div class="gradient-overlay"></div>
     </header>
-
-    <!-- New Hero Section with Purpose -->
-    <section id="hero" class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">Revolucionando a Análise Hematológica</h1>
-            <p class="hero-subtitle">Democratizando o acesso à saúde através da Inteligência Artificial</p>
-            <a href="#about" class="btn btn-primary btn-lg">Saiba Mais</a>
-        </div>
-        <div class="hero-banner">
-            <!-- Add tech/health banner images -->
-            <div class="banner-image" style="background-image: url('path/to/tech-health-1.jpg')"></div>
-            <div class="banner-image" style="background-image: url('path/to/tech-health-2.jpg')"></div>
-            <div class="banner-image" style="background-image: url('path/to/tech-health-3.jpg')"></div>
-        </div>
-    </section>
 
     <div class="nav-container">
         <nav>
@@ -76,7 +70,7 @@
                 <a href="gallery.html">Galeria</a>
                 <a href="documentation.html">Docs</a>
             </div>
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
+            <button id="theme-toggle" class="theme-toggle">🌞</button>
         </nav>
     </div>
 
@@ -110,21 +104,25 @@
             <p>Uma solução inovadora que combina IA e microscopia para análises precisas e acessíveis.</p>
         </div>
 
+        <!-- Update Feature Grid -->
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="feature-icon">🔬</div>
-                <h3>Análise Precisa</h3>
-                <p>Precisão de 97.8% na contagem de plaquetas</p>
+                <h3>Análise Inteligente</h3>
+                <p>Nossa tecnologia de IA analisa automaticamente imagens microscópicas, identificando e contando
+                    plaquetas com precisão superior a 97%.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⚡</div>
-                <h3>Resultado Rápido</h3>
-                <p>Resultados em menos de 1 segundo</p>
+                <h3>Processamento Rápido</h3>
+                <p>Resultados em menos de 1 segundo, otimizando o fluxo de trabalho laboratorial e agilizando
+                    diagnósticos.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📱</div>
-                <h3>Acessível</h3>
-                <p>Interface intuitiva para profissionais de saúde</p>
+                <h3>Interface Intuitiva</h3>
+                <p>Sistema fácil de usar, desenvolvido em colaboração com profissionais da área para garantir máxima
+                    usabilidade.</p>
             </div>
         </div>
     </div>
@@ -138,58 +136,99 @@
                 <h3>1º Lugar Bragantec</h3>
                 <p>Categoria Informática - 2023</p>
             </div>
-            <!-- Add more award cards -->
+            <div class="award-card">
+                <img src="path/to/award2.jpg" alt="Prêmio XYZ">
+                <h3>Prêmio XYZ</h3>
+                <p>Categoria Inovação - 2024</p>
+            </div>
         </div>
     </section>
 
-    <!-- Enhanced About Section -->
+    <!-- Replace the about section with this modernized version -->
     <section id="about" class="section-container">
-        <div class="about-content">
-            <h2>O Projeto Plaquet.AI</h2>
-
-            <div class="problem-solution">
-                <div class="problem-card">
-                    <h3>O Problema</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-4 fw-bold mb-4">O Projeto Plaquet.AI</h2>
+                    <p class="lead mb-4">Revolucionando a análise hematológica com Inteligência Artificial</p>
+                    <div class="d-grid gap-3">
+                        <div class="p-4 bg-light rounded-3 shadow-sm">
+                            <h3 class="h5 fw-bold text-primary">O Problema</h3>
+                            <p>A contagem manual de plaquetas é um processo demorado e suscetível a erros humanos...</p>
+                        </div>
+                        <div class="p-4 bg-light rounded-3 shadow-sm">
+                            <h3 class="h5 fw-bold text-primary">Nossa Solução</h3>
+                            <p>Desenvolvemos um sistema automatizado que utiliza IA...</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="solution-card">
-                    <h3>Nossa Solução</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco.</p>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <div class="display-4 mb-3">⚡</div>
+                                    <h4>Rapidez</h4>
+                                    <p class="text-muted">Resultados em menos de 1 segundo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more feature cards -->
+                    </div>
                 </div>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <icon>⚡</icon>
-                    <h4>Rapidez</h4>
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-                <!-- Add more benefits -->
             </div>
         </div>
     </section>
 
-    <div id="stats" class="section-container">
-        <div class="card-glass">
-            <h2>Impacto do Projeto</h2>
-            <div class="stats-container">
-                <div class="stat-box">
-                    <h3>5+</h3>
-                    <p>Prêmios Conquistados</p>
+    <!-- Add Image Carousel -->
+    <div class="image-showcase section-container">
+        <h2>Nosso Sistema em Ação</h2>
+        <div class="showcase-carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="path/to/interface1.jpg" alt="Interface do Sistema">
+                    <div class="carousel-caption">
+                        <h3>Interface Principal</h3>
+                        <p>Dashboard intuitivo para análise rápida</p>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h3>1000+</h3>
-                    <p>Análises Realizadas</p>
+                <div class="carousel-item">
+                    <img src="path/to/analysis.jpg" alt="Análise em Tempo Real">
+                    <div class="carousel-caption">
+                        <h3>Análise em Tempo Real</h3>
+                        <p>Processamento instantâneo de imagens</p>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h3>97.8%</h3>
-                    <p>Taxa de Precisão</p>
+                <div class="carousel-item">
+                    <img src="path/to/results.jpg" alt="Resultados Detalhados">
+                    <div class="carousel-caption">
+                        <h3>Relatórios Detalhados</h3>
+                        <p>Visualização clara dos resultados</p>
+                    </div>
                 </div>
+            </div>
+            <div class="carousel-controls">
+                <!-- ...existing controls... -->
             </div>
         </div>
     </div>
+
+    <!-- Update stats section -->
+    <section id="stats" class="section-container bg-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <h3 class="display-4 fw-bold text-primary">97.8%</h3>
+                            <p class="text-muted mb-0">Precisão em Análises</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more stat cards -->
+            </div>
+        </div>
+    </section>
 
     <!-- Enhanced Team Section -->
     <section id="team" class="section-container">
@@ -198,48 +237,29 @@
             <div class="team-member-card">
                 <img src="path/to/member1.jpg" alt="Team Member 1">
                 <div class="member-info">
-                    <h3>Nome do Membro</h3>
-                    <h4>Função Principal</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>Maria Clara</h3>
+                    <h4>Desenvolvedora Principal</h4>
+                    <p>Especialista em Inteligência Artificial e Processamento de Imagens</p>
                     <div class="member-social">
-                        <!-- Add social links -->
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
                     </div>
                 </div>
             </div>
-            <!-- Add more team members -->
-        </div>
-    </section>
-
-    <div id="team" class="section-container">
-        <div class="card">
-            <h2>Equipe</h2>
-            <div class="team">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/100" alt="Integrante 1">
-                    <h3>Maria Clara</h3>
-                    <p>Desenvolvedora e pesquisadora.</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/100" alt="Integrante 2">
-                    <h3>Felipe</h3>
-                    <p>Desenvolvedor e pesquisador.</p>
+            <div class="team-member-card">
+                <img src="path/to/member2.jpg" alt="Team Member 2">
+                <div class="member-info">
+                    <h3>João Silva</h3>
+                    <h4>Pesquisador</h4>
+                    <p>Experiência em análise de dados e bioinformática</p>
+                    <div class="member-social">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="awards" class="section-container">
-        <div class="card">
-            <h2>Prêmios</h2>
-            <ul>
-                <li>1º Lugar - Bragantec (Informática).</li>
-                <li>Medalha de Prata - FECCIF (Ciências da Saúde).</li>
-                <li>Medalha de Bronze - BentoTec.</li>
-                <li>1º Lugar - Samsung Innovation Campus.</li>
-                <li>1º Lugar - Mostra de Ciências e Tecnologia do Instituto 3M.</li>
-            </ul>
-        </div>
-    </div>
+    </section>
 
     <div id="faq" class="section-container">
         <div class="card">
@@ -315,7 +335,10 @@
                 <h3>2023</h3>
                 <p>Início do Desenvolvimento</p>
             </div>
-            <!-- Adicione mais eventos -->
+            <div class="timeline-item-modern">
+                <h3>2024</h3>
+                <p>Primeiro Protótipo</p>
+            </div>
         </div>
     </div>
 
@@ -323,7 +346,12 @@
     <div id="partners" class="section-container">
         <h2>Parceiros</h2>
         <div class="partners-grid">
-            <!-- Adicione logos dos parceiros -->
+            <div class="partner-logo">
+                <img src="path/to/partner1.jpg" alt="Parceiro 1">
+            </div>
+            <div class="partner-logo">
+                <img src="path/to/partner2.jpg" alt="Parceiro 2">
+            </div>
         </div>
     </div>
 
@@ -383,26 +411,46 @@
         </div>
     </div>
 
-    <!-- System Overview Section -->
+    <!-- Sistema Section -->
     <section id="system" class="section-container">
         <h2>Como Funciona</h2>
-        <div class="system-workflow">
-            <!-- Add workflow steps -->
+        <div class="workflow-steps">
+            <div class="step">
+                <div class="step-icon">📸</div>
+                <h3>Captura</h3>
+                <p>Capture a imagem microscópica da amostra</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🔍</div>
+                <h3>Análise</h3>
+                <p>Nossa IA processa e analisa a imagem</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">📊</div>
+                <h3>Resultado</h3>
+                <p>Receba o resultado preciso em segundos</p>
+            </div>
         </div>
 
-        <div class="features-table">
+        <div class="features-comparison">
             <h3>Comparativo de Funcionalidades</h3>
-            <table class="comparison-table">
-                <!-- Add comparison table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Funcionalidade</th>
+                        <th>Método Manual</th>
+                        <th>Plaquet.AI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tempo de Análise</td>
+                        <td>15-30 minutos</td>
+                        <td>Menos de 1 segundo</td>
+                    </tr>
+                    <!-- Add more rows -->
+                </tbody>
             </table>
-        </div>
-
-        <div class="cta-download">
-            <h3>Experimente o Plaquet.AI</h3>
-            <button class="btn btn-primary btn-download" disabled>
-                Download em Breve
-                <small>Versão 1.0 - Q1 2024</small>
-            </button>
         </div>
     </section>
 
