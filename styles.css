@@ -60,6 +60,7 @@ header {
     background: var(--gradient-primary);
     position: relative;
     min-height: 60vh;
+    color: var(--text-light); /* Ensure text color is white */
 }
 
 header::before {
@@ -82,6 +83,8 @@ header::before {
     position: relative;
     max-width: 800px;
     padding: 2rem;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .header-content h1 {
@@ -194,6 +197,7 @@ nav {
     transform: translateY(20px);
     transition: var(--transition);
     width: 90%;
+    text-align: center;
 }
 
 .section-container.visible {
@@ -217,7 +221,7 @@ nav {
 }
 
 .card-featured {
-    background: var(--gradient);
+    background: var(--gradient-primary);
     color: #ffffff;
     border-radius: 20px;
     padding: 2rem;
@@ -312,7 +316,7 @@ stat-card p {
 
 .progress-bar {
     height: 6px;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     border-radius: 3px;
     margin: 1rem 0;
 }
@@ -324,7 +328,7 @@ stat-card p {
 }
 
 .stat-card {
-    background: var(--gradient);
+    background: var(--gradient-primary);
     color: white;
     padding: 1.5rem;
     border-radius: 10px;
@@ -344,7 +348,7 @@ stat-card p {
     padding: 1.5rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--shadow-soft);
     transition: transform 0.3s;
     border: 2px solid var(--accent-color);
 }
@@ -372,7 +376,7 @@ stat-card p {
     color: var(--text-dark);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--shadow-soft);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -415,7 +419,7 @@ stat-card p {
 .carousel-item {
     min-width: 100%;
     padding: 2rem;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     color: var(--text-light);
 }
 
@@ -486,7 +490,7 @@ stat-card p {
 
 .progress-bar {
     height: 100%;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     width: 0;
     transition: width 0.3s ease;
 }
@@ -518,9 +522,9 @@ stat-card p {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     color: white;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--shadow-soft);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -545,7 +549,7 @@ stat-card p {
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--shadow-soft);
     transition: transform 0.3s;
 }
 
@@ -604,7 +608,7 @@ stat-card p {
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: var(--gradient);
+    background: var(--gradient-primary);
 }
 
 .timeline-item-modern {
@@ -737,7 +741,7 @@ footer {
     position: absolute;
     width: 4px;
     height: 100%;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
@@ -750,7 +754,7 @@ footer {
     padding: 1.5rem;
     background: var(--card-bg);
     border-radius: 15px;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--shadow-soft);
     transition: transform 0.3s;
 }
 
@@ -966,7 +970,7 @@ footer {
 
     .card:hover {
         transform: none;
-        box-shadow: var(--card-shadow);
+        box-shadow: var(--shadow-soft);
     }
 
     .floating-action-button:active {
@@ -979,7 +983,7 @@ footer {
     position: fixed;
     bottom: 80px;
     right: 20px;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     color: white;
     padding: 15px 25px;
     border-radius: 12px;
@@ -1093,7 +1097,7 @@ stat-card p {
 
 /* Corrigir seção de impacto */
 #impact .card {
-    background: var(--gradient);
+    background: var(--gradient-primary);
     color: #ffffff;
 }
 
