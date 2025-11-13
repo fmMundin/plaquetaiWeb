@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plaquet.AI - Projeto</title>
+    <title>Ajude o Plaquet.AI a Chegar em Recife - Vaquinha Científica</title>
+    
+    <!-- Meta tags para compartilhamento -->
+    <meta name="description" content="Ajude estudantes do CEMEP a levarem uma IA que salva vidas para a Mostra Ciência Jovem em Recife-PE">
+    <meta property="og:title" content="Ajude o Plaquet.AI a chegar em Recife">
+    <meta property="og:description" content="IA que salva vidas precisa de você! Doe e apoie ciência pública brasileira.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Inter:wght@400;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <meta name="theme-color" content="#6200ea">
+    
     <script>
-        // Verificar e aplicar tema antes de carregar CSS
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
         const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', savedTheme);
@@ -24,27 +30,68 @@
 </head>
 
 <body>
-    <div class="news-banner">
-        🎉 Novo: Versão 2.0 chegando em breve! Clique para saber mais
-    </div>
-
+    <!-- Barra de Progresso -->
     <div class="progress-container">
         <div class="progress-bar"></div>
     </div>
 
-    <header class="hero-section">
+    <!-- HERO SECTION - DOAÇÃO -->
+    <header class="hero-section donation-hero">
         <div class="container text-center">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <h1 class="display-4 fw-bold text-white">Plaquet.AI</h1>
-                    <p class="lead text-white">Revolucionando a Análise Hematológica</p>
-                    <div class="header-buttons">
-                        <a href="#about" class="btn btn-primary btn-lg">Conheça Nossa Solução</a>
-                        <a href="#demo" class="btn btn-outline-light btn-lg">Ver Demonstração</a>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Badge de urgência -->
+                    <div class="urgency-badge animate__animated animate__bounceIn">
+                        🏆 SELECIONADOS PARA MOSTRA CIÊNCIA JOVEM - RECIFE-PE
+                    </div>
+                    
+                    <h1 class="display-3 fw-bold text-white mb-3 animate__animated animate__fadeInDown">
+                        Ajude a IA que Salva Vidas<br>a Chegar em Recife
+                    </h1>
+                    
+                    <p class="lead text-white mb-4 animate__animated animate__fadeInUp">
+                        Somos estudantes do CEMEP e criamos o <strong>Plaquet.AI</strong>: uma Inteligência Artificial<br>
+                        que ajuda na prevenção de hemorragias em crianças com leucemia 💙
+                    </p>
+                    
+                    <!-- Contador de Meta -->
+                    <div class="donation-meter-hero animate__animated animate__zoomIn">
+                        <div class="meter-container">
+                            <div class="meter-fill" id="meterFill" style="width: 0%"></div>
+                            <div class="meter-text">
+                                <span class="current-amount" id="currentAmount">R$ 0</span>
+                                <span class="separator"> / </span>
+                                <span class="goal-amount">R$ 6.000</span>
+                            </div>
+                        </div>
+                        <p class="meter-subtitle">
+                            <span id="percentage">0%</span> da meta alcançada • Atualizado hoje
+                        </p>
+                    </div>
+                    
+                    <!-- Botões de ação -->
+                    <div class="header-buttons mt-4 animate__animated animate__fadeInUp animate__delay-1s">
+                        <a href="#doar" class="btn btn-donation btn-lg pulse-animation">
+                            💙 DOAR AGORA
+                        </a>
+                        <a href="#sobre-projeto" class="btn btn-outline-light btn-lg">
+                            🧬 Conheça o Projeto
+                        </a>
+                    </div>
+                    
+                    <!-- Incentivos -->
+                    <div class="donation-incentive mt-3 animate__animated animate__fadeIn animate__delay-2s">
+                        <span class="incentive-item">🎁 Concorra a fone Bluetooth</span>
+                        <span class="incentive-divider">•</span>
+                        <span class="incentive-item">📊 Transparência total</span>
+                        <span class="incentive-divider">•</span>
+                        <span class="incentive-item">✅ Excedente para novos projetos</span>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Formas animadas -->
         <div class="animated-shape shape-1">
             <svg width="100" height="100" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="40" stroke="currentColor" fill="none" stroke-width="2" />
@@ -57,365 +104,475 @@
         </div>
     </header>
 
+    <!-- NAVEGAÇÃO -->
     <div class="nav-container">
         <nav>
             <button class="nav-toggle" aria-label="Toggle menu">☰</button>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#about">Sobre</a>
-                <a href="index.html#features">Tecnologia</a>
-                <a href="research.html">Pesquisa</a>
-                <a href="gallery.html">Galeria</a>
-                <a href="documentation.html">Docs</a>
+                <a href="#doar">💙 Doar</a>
+                <a href="#sobre-projeto">🧬 O Projeto</a>
+                <a href="#impacto">🎯 Por Que Ajudar</a>
+                <a href="#transparencia">✅ Transparência</a>
+                <a href="#faq">❓ Dúvidas</a>
             </div>
             <button id="theme-toggle" class="theme-toggle">🌜</button>
         </nav>
     </div>
 
-    <div id="highlights" class="section-container">
-        <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <h2>Tecnologia Inovadora</h2>
-                    <p>Inteligência Artificial para análise hematológica precisa</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Reconhecimento Nacional</h2>
-                    <p>5+ prêmios em competições científicas</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Impacto Social</h2>
-                    <p>Democratizando o acesso à análise hematológica</p>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <span class="carousel-dot active"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-            </div>
-        </div>
-    </div>
-
-    <div id="about" class="section-container">
-        <div class="card-featured">
-            <h2>Revolucionando a Análise Hematológica</h2>
-            <p>Uma solução inovadora que combina IA e microscopia para análises precisas e acessíveis.</p>
-        </div>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔬</div>
-                <h3>Análise Inteligente</h3>
-                <p>Nossa tecnologia de IA analisa automaticamente imagens microscópicas, identificando e contando
-                    plaquetas com precisão superior a 97%.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Processamento Rápido</h3>
-                <p>Resultados em menos de 1 segundo, otimizando o fluxo de trabalho laboratorial e agilizando
-                    diagnósticos.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Interface Intuitiva</h3>
-                <p>Sistema fácil de usar, desenvolvido em colaboração com profissionais da área para garantir máxima
-                    usabilidade.</p>
-            </div>
-        </div>
-    </div>
-
-    <section id="awards-gallery" class="section-container">
-        <h2>Reconhecimento e Premiações</h2>
-        <div class="awards-grid">
-            <div class="award-card">
-                <img src="path/to/award1.jpg" alt="Conquista Bragantec">
-                <h3>1º Lugar Bragantec</h3>
-                <p>Categoria Informática - 2024</p>
-            </div>
-        </div>
-        <div class="awards-grid">
-            <div class="award-card">
-                <img src="path/to/award1.jpg" alt="Conquista 3M">
-                <h3>1º Lugar Instituto 3M</h3>
-                <p>Categoria Saúde - 2024</p>
-            </div>
-        </div>
-        <div class="awards-grid">
-            <div class="award-card">
-                <img src="path/to/award1.jpg" alt="Conquista SIC">
-                <h3>1º Lugar Samsung Innovation Campus</h3>
-                <p> 2024</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="stats" class="section-container bg-light py-5">
-        <div class="container">
+    <!-- SEÇÃO: COMO DOAR -->
+    <div id="doar" class="section-container donation-section">
+        <div class="card-featured donation-card">
+            <h2 class="text-center mb-3">💙 Como Você Pode Ajudar</h2>
+            <p class="lead text-center mb-5">Qualquer valor faz a diferença na nossa jornada!</p>
+            
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body text-center">
-                            <h3 class="display-4 fw-bold text-primary">82.8%</h3>
-                            <p class="text-muted mb-0">Precisão em Análises</p>
+                <!-- Pix -->
+                <div class="col-lg-6">
+                    <div class="donation-method-card">
+                        <div class="method-icon">💸</div>
+                        <h3>Faça sua Doação via PIX</h3>
+                        <p class="text-muted">Rápido, seguro e fácil</p>
+                        
+                        <div class="pix-info">
+                            <label class="form-label">Chave PIX (E-mail):</label>
+                            <div class="input-group mb-3">
+                                <input type="text" 
+                                       value="felipemauriciomundin@outlook.com" 
+                                       id="pixKey" 
+                                       readonly 
+                                       class="pix-input form-control">
+                                <button onclick="copyPix()" class="btn btn-copy">
+                                    <i class="fas fa-copy"></i> Copiar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- QR Code -->
+                        <div class="qr-code-container mt-3">
+                            <div class="qr-placeholder">
+                                <i class="fas fa-qrcode fa-5x text-muted"></i>
+                                <p class="text-muted mt-2">QR Code PIX<br><small>Adicione a imagem do QR Code aqui</small></p>
+                            </div>
+                        </div>
+                        
+                        <div class="donation-values mt-4">
+                            <h5>Sugestões de Valores:</h5>
+                            <div class="value-examples">
+                                <button class="value-badge" onclick="alert('Pix: felipemauriciomundin@outlook.com\nValor: R$ 10,00')">R$ 10</button>
+                                <button class="value-badge" onclick="alert('Pix: felipemauriciomundin@outlook.com\nValor: R$ 25,00')">R$ 25</button>
+                                <button class="value-badge" onclick="alert('Pix: felipemauriciomundin@outlook.com\nValor: R$ 50,00')">R$ 50</button>
+                                <button class="value-badge" onclick="alert('Pix: felipemauriciomundin@outlook.com\nValor: R$ 100,00')">R$ 100</button>
+                            </div>
+                            <p class="text-small mt-3">
+                                <strong>R$ 10</strong> = 1 refeição da equipe<br>
+                                <strong>R$ 50</strong> = parte da hospedagem<br>
+                                <strong>R$ 100</strong> = você é nosso herói! 🚀
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comprovante -->
+                <div class="col-lg-6">
+                    <div class="donation-method-card">
+                        <div class="method-icon">🎁</div>
+                        <h3>Envie seu Comprovante</h3>
+                        <p class="text-muted mb-4">E concorra a um <strong>Fone Bluetooth Headset</strong>!</p>
+                        
+                        <div class="prize-highlight">
+                            <i class="fas fa-headphones fa-3x text-primary mb-3"></i>
+                            <p>Todos os doadores que enviarem comprovante participam do sorteio</p>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3">Envie por WhatsApp:</h5>
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/5519987553329?text=Olá!%20Acabei%20de%20fazer%20uma%20doação%20para%20o%20Plaquet.AI.%20Segue%20meu%20comprovante:" 
+                               target="_blank" 
+                               class="btn btn-whatsapp w-100 mb-2">
+                                <i class="fab fa-whatsapp"></i> (19) 98755-3329
+                            </a>
+                            <a href="https://wa.me/5519992820576?text=Olá!%20Acabei%20de%20fazer%20uma%20doação%20para%20o%20Plaquet.AI.%20Segue%20meu%20comprovante:" 
+                               target="_blank" 
+                               class="btn btn-whatsapp w-100">
+                                <i class="fab fa-whatsapp"></i> (19) 99282-0576
+                            </a>
+                        </div>
+                        
+                        <div class="alert alert-info mt-4">
+                            <i class="fas fa-info-circle"></i>
+                            <small>O sorteio será realizado após atingirmos a meta!</small>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Compartilhar -->
+            <div class="share-widget mt-5">
+                <h4 class="text-center mb-3">📢 Não pode doar? Compartilhe!</h4>
+                <p class="text-center text-muted mb-4">Cada compartilhamento nos aproxima da meta</p>
+                <div class="share-buttons">
+                    <a href="https://api.whatsapp.com/send?text=Ajude%20o%20Plaquet.AI%20a%20chegar%20em%20Recife!%20IA%20que%20salva%20vidas%20precisa%20de%20você.%20Acesse:%20[SEU_LINK]" 
+                       target="_blank"
+                       class="share-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=[SEU_LINK]" 
+                       target="_blank"
+                       class="share-btn facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Ajude%20o%20Plaquet.AI%20a%20chegar%20em%20Recife!%20&url=[SEU_LINK]" 
+                       target="_blank"
+                       class="share-btn twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=[SEU_LINK]" 
+                       target="_blank"
+                       class="share-btn linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section id="team" class="section-container">
-        <h2>Nossa Equipe</h2>
-        <div class="team-grid">
-            <div class="team-member-card">
-                <img src="path/to/member1.jpg" alt="Team Member 1">
-                <div class="member-info">
-                    <h3>Maria Clara</h3>
-                    <h4>Desenvolvedora Principal</h4>
-                    <p>Especialista em Inteligência Artificial e Processamento de Imagens</p>
-                    <div class="member-social">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">GitHub</a>
+    <!-- SEÇÃO: SOBRE O PROJETO -->
+    <div id="sobre-projeto" class="section-container">
+        <div class="row align-items-center g-5">
+            <!-- Imagem/Visual -->
+            <div class="col-lg-6">
+                <div class="project-visual">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-microscope fa-5x text-primary mb-3"></i>
+                        <p class="text-muted">Adicione aqui uma foto da equipe<br>ou do sistema em funcionamento</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conteúdo -->
+            <div class="col-lg-6">
+                <h2 class="mb-4">🧬 O Que é o Plaquet.AI?</h2>
+                <p class="lead mb-4">
+                    Uma Inteligência Artificial desenvolvida por estudantes de escola pública 
+                    que conta células sanguíneas para ajudar crianças com leucemia.
+                </p>
+                
+                <div class="story-timeline">
+                    <div class="story-item">
+                        <div class="story-icon">💡</div>
+                        <div class="story-content">
+                            <h4>O Problema</h4>
+                            <p>Na leucemia infantil, contar células rápido pode prevenir hemorragias graves. 
+                            A contagem manual é demorada e pode atrasar diagnósticos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="story-item">
+                        <div class="story-icon">🤖</div>
+                        <div class="story-content">
+                            <h4>Nossa Solução</h4>
+                            <p>IA que realiza contagem em menos de 1 segundo com 82.8% de precisão. 
+                            Tecnologia acessível que pode salvar vidas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="story-item">
+                        <div class="story-icon">🏆</div>
+                        <div class="story-content">
+                            <h4>A Conquista</h4>
+                            <p>Selecionados para representar o CEMEP na <strong>Mostra Ciência Jovem</strong>, 
+                            a feira científica mais antiga do Brasil, em Recife-PE!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="story-item">
+                        <div class="story-icon">❤️</div>
+                        <div class="story-content">
+                            <h4>Precisamos de Você</h4>
+                            <p>R$ 6.000 para transporte, hospedagem e alimentação. 
+                            Sem ajuda, não conseguiremos ir. É simples assim.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="achievements-badges mt-4">
+                    <span class="achievement-badge">🥇 1º Lugar Bragantec</span>
+                    <span class="achievement-badge">🥇 1º Lugar Instituto 3M</span>
+                    <span class="achievement-badge">🥇 1º Lugar Samsung Innovation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO: POR QUE AJUDAR -->
+    <div id="impacto" class="section-container bg-gradient">
+        <h2 class="text-center mb-5 text-white">🎯 Por Que Sua Doação Importa</h2>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="impact-card">
+                    <div class="impact-icon">🇧🇷</div>
+                    <h3>Ciência Pública</h3>
+                    <p>Você investe no futuro da pesquisa nacional e na educação pública de qualidade</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="impact-card">
+                    <div class="impact-icon">👶</div>
+                    <h3>Salvando Vidas</h3>
+                    <p>Nosso projeto pode ajudar crianças com leucemia através de diagnósticos mais rápidos</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="impact-card">
+                    <div class="impact-icon">🎓</div>
+                    <h3>Educação Transforma</h3>
+                    <p>Apoiando estudantes de escola pública a representarem o Brasil nacionalmente</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="impact-card">
+                    <div class="impact-icon">💰</div>
+                    <h3>Excedente Reinvestido</h3>
+                    <p>Valores acima da meta vão para APM/CEMEP apoiar novos projetos científicos</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <p class="lead text-white mb-4">
+                💭 Imagina se <strong>600 pessoas</strong> doarem R$ 10...<br>
+                <strong class="display-6">ELES CHEGAM LÁ! 🚀</strong>
+            </p>
+            <a href="#doar" class="btn btn-donation btn-lg">Quero Fazer Parte!</a>
+        </div>
+    </div>
+
+    <!-- SEÇÃO: TRANSPARÊNCIA -->
+    <div id="transparencia" class="section-container">
+        <div class="card-featured">
+            <h2 class="text-center mb-3">✅ Compromisso com a Transparência</h2>
+            <p class="lead text-center mb-5">Você merece saber exatamente como cada real será usado</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="transparency-item">
+                        <div class="transp-icon">✈️</div>
+                        <h4>Transporte</h4>
+                        <p>Passagens ida e volta<br>Paulínia ↔ Recife<br>para toda equipe</p>
+                        <div class="transp-value">~R$ 2.500</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="transparency-item">
+                        <div class="transp-icon">🏨</div>
+                        <h4>Hospedagem</h4>
+                        <p>5 dias de estadia<br>durante o evento<br>em Recife-PE</p>
+                        <div class="transp-value">~R$ 2.000</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="transparency-item">
+                        <div class="transp-icon">🍽️</div>
+                        <h4>Alimentação</h4>
+                        <p>Refeições completas<br>da equipe durante<br>toda a viagem</p>
+                        <div class="transp-value">~R$ 1.500</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-5">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-info-circle fa-2x me-3"></i>
+                    <div>
+                        <strong>Atualização Diária:</strong> Acompanhe o valor arrecadado em tempo real nesta página!<br>
+                        <small>Última atualização: <span id="lastUpdate">Hoje</span></small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="transparency-promise mt-4 text-center">
+                <h5>Nosso Compromisso:</h5>
+                <div class="promise-items">
+                    <div class="promise-item">
+                        <i class="fas fa-check-circle text-success"></i>
+                        <span>Prestação de contas pública</span>
+                    </div>
+                    <div class="promise-item">
+                        <i class="fas fa-check-circle text-success"></i>
+                        <span>Notas fiscais disponíveis</span>
+                    </div>
+                    <div class="promise-item">
+                        <i class="fas fa-check-circle text-success"></i>
+                        <span>Relatório final completo</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <!-- SEÇÃO: FAQ -->
     <section id="faq" class="section-container">
-        <h2>Perguntas Frequentes</h2>
+        <h2 class="text-center mb-5">❓ Perguntas Frequentes</h2>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question">
-                    Como funciona o Plaquet.AI?
-                    <span class="icon">+</span>
+                    Como faço para doar?
+                    <i class="fas fa-plus"></i>
                 </div>
                 <div class="faq-answer">
-                    O Plaquet.AI utiliza algoritmos de IA para analisar imagens microscópicas e realizar a contagem
-                    precisa de plaquetas.
+                    É muito simples! Faça um PIX para <strong>felipemauriciomundin@outlook.com</strong>, 
+                    tire print do comprovante e envie para um dos nossos WhatsApp: 
+                    (19) 98755-3329 ou (19) 99282-0576. Você automaticamente entra no sorteio!
                 </div>
             </div>
+            
             <div class="faq-item">
                 <div class="faq-question">
-                    Qual a precisão do sistema?
-                    <span class="icon">+</span>
+                    Qual o valor mínimo de doação?
+                    <i class="fas fa-plus"></i>
                 </div>
                 <div class="faq-answer">
-                    Nossa tecnologia alcança 97.8% de precisão nas análises, comparável a contagens manuais realizadas
-                    por especialistas.
+                    Não há valor mínimo! Qualquer quantia é bem-vinda e faz diferença. 
+                    Sugerimos R$ 10, mas você pode doar o valor que puder e quiser.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Como funciona o sorteio do fone?
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    Todos que enviarem comprovante de doação participam automaticamente. 
+                    O sorteio será realizado quando atingirmos a meta, de forma transparente 
+                    e com transmissão ao vivo nas nossas redes sociais.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    O que acontece se passar da meta?
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    Todo valor que exceder os R$ 6.000 será doado para a APM do CEMEP, 
+                    que usará para apoiar outros projetos científicos de estudantes da escola. 
+                    Assim, você continua investindo em ciência e educação!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Como posso acompanhar as doações?
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    O valor arrecadado é atualizado diariamente aqui no site, no topo da página. 
+                    Também postamos atualizações nas nossas redes sociais. Após a viagem, 
+                    publicaremos um relatório completo com todas as despesas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Não posso doar, como mais posso ajudar?
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    Compartilhe nossa campanha nas redes sociais! Use os botões de compartilhamento 
+                    acima. Quanto mais pessoas souberem, maior a chance de atingirmos a meta. 
+                    Seu compartilhamento vale ouro! 🌟
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section-container">
-        <h2>Contato</h2>
-        <div class="card">
-            <p>Email: contato@plaquetai.com</p>
-            <p>Telefone: (00) 0000-0000</p>
-        </div>
-    </section>
-
-    <section id="technologies" class="section-container">
-        <h2>Tecnologias Utilizadas</h2>
-        <div class="tech-stack-grid">
-            <div class="tech-item floating-element">
-                <div class="tech-icon">🤖</div>
-                <h3>Yolov5</h3>
-            </div>
-            <div class="tech-item floating-element" style="animation-delay: 1s;">
-                <div class="tech-icon">🔍</div>
-                <h3>OpenCV</h3>
-            </div>
-            <div class="tech-item floating-element" style="animation-delay: 2s;">
-                <div class="tech-icon">🧬</div>
-                <h3>scikit-learn</h3>
-            </div>
-        </div>
-    </section>
-
+    <!-- SEÇÃO: DEPOIMENTOS -->
     <section id="testimonials" class="section-container bg-light">
-        <h2>Depoimentos</h2>
-        <div class="testimonial-card">
-            <img src="avatar1.jpg" alt="Dr. Silva" class="testimonial-avatar">
-            <blockquote>
-                "O Plaquet.AI revolucionou nossa rotina laboratorial."
-            </blockquote>
-            <cite>Dr. Silva - Hospital Regional</cite>
-        </div>
-    </section>
-
-    <section id="project-timeline" class="section-container">
-        <h2>Linha do Tempo do Projeto</h2>
-        <div class="timeline-modern">
-            <div class="timeline-item-modern">
-                <h3>2023</h3>
-                <p>Início do Desenvolvimento</p>
-            </div>
-            <div class="timeline-item-modern">
-                <h3>2025</h3>
-                <p>Fim do Desenvolvimento</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="partners" class="section-container">
-        <h2>Parceiros</h>
-        </h2>
-        <div class="partners-grid">
-            <div class="partner-logo">
-                <img src="path/to/partner1.jpg" alt="Corpo docente e Gestão do CEMEP">
-            </div>
-            <div class="partner-logo">
-                <img src="path/to/partner2.jpg" alt="Parceiro 2">
-            </div>
-        </div>
-    </section>
-
-    <section id="impact" class="section-container">
-        <h2>Métricas de Impacto</h2>
-    </section>
-
-    <section id="journey" class="section-container">
-        <h2 class="fade-in">Nossa Jornada</h2>
-        <div class="timeline-container">
-            <div class="timeline-item fade-in">
-                <div class="timeline-date">2023</div>
-                <h3>Início do Projeto</h3>
-                <p>Desenvolvimento do primeiro protótipo do Plaquet.AI</p>
-            </div>
-            <div class="timeline-item fade-in">
-                <div class="timeline-date">2024</div>
-                <h3>Primeiro Prêmio</h3>
-                <p>1º Lugar na Bragantec</p>
-            </div>
-            <div class="timeline-item fade-in">
-                <div class="timeline-date">2024</div>
-                <h3>Expansão</h3>
-            </div>
-            <div class="timeline-item fade-in">
-                <div class="timeline-date">2025</div>
-                <h3>Reconhecimento Nacional</h3>
-                <p>Aporvação em mostras nacionais</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="advanced-stats" class="section-container">
-        <h2>Estatísticas Avançadas</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="stat-card-modern animate__animated animate__fadeInUp">
-                    <div class="stat-icon">📊</div>
-                    <div class="stat-number counter">82.7%</div>
-                    <div class="stat-label">Precisão em Testes</div>
+        <h2 class="text-center mb-5">💬 O Que Dizem Sobre o Projeto</h2>
+        
+        <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <blockquote>
+                            "Parabéns pelo projeto! Muito bem feito e de grande relevância!"
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <cite>Adriana Coelho</cite>
+                                <p>Feira Bentotec - ETEC Bento Quirino</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
+                
+                <div class="carousel-item">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <blockquote>
+                            "Maravilhoso! Presença pertinente da pesquisa para auxiliar as pessoas 
+                            que não tem acesso rápido a um hemograma!"
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <cite>Rita Carvalho</cite>
+                                <p>Feira Bragantec - IFSP Bragança Paulista</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <blockquote>
+                            "Muito Bom e promissor!"
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <cite>Prof Lívia Clemente</cite>
+                                <p>FEBRACE - Inova USP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="stat-card-modern animate__animated animate__fadeInUp">
-                <div class="stat-icon">📊</div>
-                <div class="stat-number counter">82.7%</div>
-                <div class="stat-label">Precisão em Testes</div>
-            </div>
-    </section>
-
-    <section id="demo" class="section-container">
-        <h2>Demonstração Interativa</h2>
-        <div class="interactive-demo">
-            <div class="demo-preview floating-element">
-            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </section>
 
-    <section id="system" class="section-container">
-        <h2>Como Funciona</h2>
-        <div class="workflow-steps">
-            <div class="step">
-                <div class="step-icon">📸</div>
-                <h3>Captura</h3>
-                <p>Capture a imagem microscópica da amostra</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">🔍</div>
-                <h3>Análise</h3>
-                <p>Nossa IA processa e analisa a imagem</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">📊</div>
-                <h3>Resultado</h3>
-                <p>Receba o resultado preciso em segundos</p>
-            </div>
-        </div>
-
-        <div class="features-comparison">
-            <h3>Comparativo de Funcionalidades</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Funcionalidade</th>
-                        <th>Método Manual</th>
-                        <th>Plaquet.AI</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Tempo de Análise</td>
-                        <td>15-30 minutos</td>
-                        <td>Menos de 1 segundo</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section id="results" class="section-container">
-        <h2>Resultados</h2>
-        <div class="results-grid">
-        </div>
-    </section>
-
-    <div class="floating-action-button">
-        <span>💬</span>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sobre</h3>
-                <p>Plaquet.AI é um projeto inovador que utiliza IA para democratizar o acesso à análise hematológica.
-                </p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul class="footer-links">
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#features">Tecnologia</a></li>
-                    <li><a href="./research.html">Pesquisa</a></li>
-                    <li><a href="./documentation.html">Documentação</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <ul class="footer-links">
-                    <li>Email: contato@plaquetai.com</li>
-                    <li>Tel: (00) 0000-0000</li>
-                    <li>Local: São Paulo, SP</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="social-links">
-                <a href="#" aria-label="GitHub">📱</a>
-                <a href="#" aria-label="LinkedIn">💼</a>
-                <a href="#" aria-label="Twitter">🐦</a>
-            </div>
-            <p>&copy; 2025 Plaquet.AI - Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-</body>
-
-</html>
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+        <div class="container text-center">
+            <h2 class="display-4 mb-4">Faça Parte Dessa História 💙</h2>
+            <p class="lead mb-4">
+                Cada doação nos aproxima de Recife e do sonho de representar a ciência pública brasileira
+            </p>
+            <a href="#doar" class="btn btn-donation btn-lg mb-3">
+                <i class="fas fa-heart"></i> Doar Agora
+            </a>
+            <p class="text-white">
+                Ou
