@@ -179,7 +179,7 @@ function copyPix() {
 // ============================================
 function initDonationMeter() {
     // SUBSTITUIR ESTE VALOR PELO VALOR REAL ARRECADADO
-    const currentAmount = 0; // Atualizar diariamente
+    const currentAmount = 30,01; // Atualizar diariamente(atualizado 13/11)
     const goalAmount = 6000;
     
     updateDonationMeter(currentAmount, goalAmount);
