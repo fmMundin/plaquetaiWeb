@@ -179,7 +179,7 @@ function copyPix() {
 // ============================================
 function initDonationMeter() {
     // SUBSTITUIR ESTE VALOR PELO VALOR REAL ARRECADADO
-    const currentAmount = 208,01; // Atualizar diariamente(atualizado 13/11)
+    const currentAmount = 346,03; // Atualizar diariamente(atualizado 13/11)
     const goalAmount = 6000;
     
     updateDonationMeter(currentAmount, goalAmount);
@@ -197,7 +197,7 @@ function updateDonationMeter(currentAmount, goalAmount = 6000) {
     // Atualizar porcentagem
     const percentageEl = document.getElementById('percentage');
     if (percentageEl) {
-        animateValue(percentageEl, 0.5 percentage, 2000, false);
+        animateValue(percentageEl, 5,percentage, 2000, false);
     }
     
     // Atualizar barra visual
